@@ -37,6 +37,22 @@ d = Dog.new
 puts d == d.bark //true
 ```
 
+## Create multiple class level methods
+
+```
+class Dog
+  def << self
+    def bark
+    end
+    def chew
+    end
+    def fetch
+    end
+  end
+end
+```
+all methods inside of def << self are class-level methods
+
 
 
 
