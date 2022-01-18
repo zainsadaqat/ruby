@@ -53,6 +53,46 @@ end
 ```
 all methods inside of def << self are class-level methods
 
+## First way to use Blocks
+
+```
+students = ["zain", "moaz", "leo", "ali"];
+
+# One way to implement blocks
+def each(array, &block) 
+  i = 0;
+  while i < array.length
+    element = array[i]
+    block.call(element) # one way
+    i += 1
+  end
+end
+
+each(students) do |student|
+  puts "element == #{student}"
+end
+```
+
+## Second way to use Blocks
+
+```
+students = ["zain", "moaz", "leo", "ali"];
+
+# Second way to implement block is using yield
+def each(array)
+  i = 0
+  while i < array.length
+    element = array[i]
+    yield element # second way
+    i += 1
+  end
+end
+
+each(students) do |student|
+  puts "element == #{student}"
+end
+```
+
 
 
 
